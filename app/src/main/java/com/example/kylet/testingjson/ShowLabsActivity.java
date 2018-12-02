@@ -18,6 +18,28 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AdapterView.OnItemClickListener;
+
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.widget.Button;
+import android.widget.ListView;
+import java.util.ArrayList;
+import java.util.List;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Switch;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,6 +59,17 @@ public class ShowLabsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_labs);
+
+        // filter shit
+
+        Boolean woodward = getIntent().getBooleanExtra("wood", false);
+        Boolean atkins = getIntent().getBooleanExtra("wood", false);
+
+
+        //
+
+
+
         myData = new ArrayList<>();
 
         mRecyclerView = findViewById(R.id.my_recycler_view);
@@ -96,6 +129,14 @@ public class ShowLabsActivity extends AppCompatActivity {
         requestQueue.add(jsonObjectRequest);
         String test = myData.toString();
         test.charAt(1);
+
+        Button b = (Button) findViewById(R.id.popUp);
+
+        b.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(ShowLabsActivity.this,Pop.class));
+            }
+        });
     }
 }
 

@@ -30,6 +30,10 @@
         <activity
             android:name="com.example.kylet.testingjson.ShowLabsActivity"
             android:parentActivityName="com.example.kylet.testingjson.MainActivity" />
+        <activity
+            android:name="com.example.kylet.testingjson.Pop"
+            android:theme="@style/AppTheme.CustomTheme" >
+        </activity>
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
